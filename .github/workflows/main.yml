@@ -33,14 +33,14 @@ jobs:
     needs: build
     environment: 
       name: production
-      url: http:/melted-chickens.surge.sh
+      url: http:/meaty-sleet.surge.sh
     steps:
       - name: Download the Build Artifact
         uses: actions/download-artifact@v3.0.0
         with:
           name: build
       - name: deploy to surge
-        run: npx surge –project ‘.’ –domain melted-chickens.surge.sh
+        run: npx surge –project ‘.’ –domain meaty-sleet.surge.sh
         env:
           SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
